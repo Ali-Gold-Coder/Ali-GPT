@@ -1,0 +1,154 @@
+/* Use ctrl + l for commenting lines in css */
+/* Understand what all css varibles mean. fucntion
+   names are pretty self explanitory, but css varibles not sure on 
+    Make sure to put it in a notes file some where in the code base*/
+
+
+/* The entire screens layout  */
+.landing-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;   /* caligns enter horizontally */
+    align-items: center; /* aligns center vertically  */
+    
+}
+
+/*Actual video */
+.landing-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw; /* fill entire viewport width */
+    height: 100vh; /* fill entire viewport width */
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+/*All of teh UI stuff like title text, login buttion and sugn up button overlaying over video */ 
+.landing-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main title */
+
+.app-title {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+/* Fbutton classic / base style*/
+
+.landing-button {
+    width: 200px;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 40px; /* Makes it a oval*/
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: bold;
+}
+/* Login button , black oval with white text */
+
+.login{
+    background: black;
+    color: white;
+
+}
+
+
+.signup{
+    background: white;
+    color: black;
+
+}
+
+.landing-button:hover {
+    transform: scale(1.05);
+}
+
+/*new below*/
+
+.animated-text-down {
+    opacity: 0; /*removes the text/ image from loading first then doing the animation. ex it would load first then do animation for the name of my applkication*/
+    animation-name: slideInDown;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /* keeps final state after ani*/
+}
+
+
+.animated-text-Left {
+    opacity: 0; /*removes the text/ image from loading first then doing the animation. ex it would load first then do animation for the name of my applkication*/
+    animation-name: slideInLeft;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;/* keeps final state after ani*/
+}
+
+.animated-text-Right {
+    opacity: 0; /*removes the text/ image from loading first then doing the animation. ex it would load first then do animation for the name of my applkication*/
+    animation-name: slideInRight;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /* keeps final state after ani*/
+}
+
+
+@keyframes slideInRight {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes slideInLeft {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes slideInDown {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
